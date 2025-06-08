@@ -27,8 +27,7 @@ class MainActivity : AppCompatActivity() {
         val showBarcodeButton = findViewById<ImageButton>(R.id.show_barcode_button)
 
         showBarcodeButton.setOnClickListener {
-            // a la cocina
-            //hola
+
             val dialog = BottomSheetDialog(this)
             val view = layoutInflater.inflate(R.layout.dialog_barcode, null)
             dialog.setContentView(view)
