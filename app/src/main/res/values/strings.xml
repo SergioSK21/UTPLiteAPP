@@ -6,4 +6,5 @@
     <string name="title_activity_meetings">MeetingsActivity</string>
     <string name="title_activity_downloads">DownloadsActivity</string>
     <string name="title_activity_course_detail">CourseDetailActivity</string>
+    <string name="title_activity_zoom">ZoomActivity</string>
 </resources>

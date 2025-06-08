@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         // BARRA INFERIOR
         val courses = findViewById<ImageView>(R.id.courses)
         val calendar = findViewById<ImageView>(R.id.calendar)
-        val meetings = findViewById<ImageView>(R.id.meetings)
+        val meetings = findViewById<ImageView>(R.id.zoom)
         val downloads = findViewById<ImageView>(R.id.downloads)
 
         courses.setOnClickListener {
@@ -100,7 +100,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, CalendarActivity::class.java))
         }
         meetings.setOnClickListener {
-            startActivity(Intent(this, MeetingsActivity::class.java))
+            val intent = Intent(this, ZoomActivity::class.java)
+            startActivity(intent)
         }
         downloads.setOnClickListener {
             startActivity(Intent(this, DownloadsActivity::class.java))

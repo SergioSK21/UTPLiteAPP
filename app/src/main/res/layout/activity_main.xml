@@ -440,7 +440,7 @@
             android:tint="#FFFFFF"/>
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/meetings"
+            android:id="@+id/zoom"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
