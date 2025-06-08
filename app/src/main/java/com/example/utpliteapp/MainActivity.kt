@@ -52,6 +52,13 @@ class MainActivity : AppCompatActivity() {
             dialog.show()
         }
 
+        val notificationButton = findViewById<ImageButton>(R.id.notification)
+        notificationButton.setOnClickListener {
+            val intent = Intent(this, AdActivity::class.java)
+            startActivity(intent)
+        }
+
+
         // MENU DE CURSOS
         val course1 = findViewById<CardView>(R.id.course_1)
         val course2 = findViewById<CardView>(R.id.course_2)

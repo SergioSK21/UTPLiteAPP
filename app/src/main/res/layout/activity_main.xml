@@ -57,12 +57,11 @@
             android:id="@+id/notification"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:padding="12dp"
             android:background="@drawable/rounded_button_background"
-            android:src="@drawable/ic_notification"
             android:contentDescription="Notifications"
+            android:padding="12dp"
+            android:src="@drawable/ic_notification"
             app:tint="@android:color/white" />
-
 
 
     </LinearLayout>
