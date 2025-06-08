@@ -1,4 +1,4 @@
-package com.example.utpliteapp.ui.theme
+package com.example.utpliteapp.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
