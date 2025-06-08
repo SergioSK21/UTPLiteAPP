@@ -5,7 +5,9 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +15,7 @@ import androidx.cardview.widget.CardView
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.common.BitMatrix
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,14 +24,31 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // MOSTRAR CÓDIGO DE BARRAS
-        val barcodeImage = findViewById<ImageView>(R.id.barcode_image)
-        val studentCode = "1234567890"
+        val showBarcodeButton = findViewById<ImageButton>(R.id.show_barcode_button)
 
-        try {
-            val bitmap = generateBarcode(studentCode)
-            barcodeImage.setImageBitmap(bitmap)
-        } catch (e: Exception) {
-            e.printStackTrace()
+        showBarcodeButton.setOnClickListener {
+            // Crear el dialog
+            val dialog = BottomSheetDialog(this)
+            val view = layoutInflater.inflate(R.layout.dialog_barcode, null)
+            dialog.setContentView(view)
+
+            // Configurar los elementos del dialog
+            val barcodeImage = view.findViewById<ImageView>(R.id.dialog_barcode_image)
+            val studentName = view.findViewById<TextView>(R.id.dialog_student_name)
+
+            val studentCode = "1234567890"
+
+            try {
+                val bitmap = generateBarcode(studentCode)
+                barcodeImage.setImageBitmap(bitmap)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+
+            studentName.text = "John Smith"
+
+            // Mostrar el dialog
+            dialog.show()
         }
 
         // MENU DE CURSOS
@@ -80,26 +100,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         // BOTÓN AHORRO DE DATOS
-        val btnDataSaver = findViewById<Button>(R.id.data_saver_button)
+        val btnDataSaver = findViewById<ImageButton>(R.id.data_saver_button)
         var isDataSaverOn = false
 
         btnDataSaver.setOnClickListener {
             isDataSaverOn = !isDataSaverOn
 
             if (isDataSaverOn) {
-                // Activar modo ahorro visual
-                barcodeImage.visibility = View.GONE
-
                 for (card in courseImages) {
                     card.setCardBackgroundColor(resources.getColor(android.R.color.darker_gray))
                 }
 
-                btnDataSaver.text = "Desactivar ahorro de datos"
+
                 Toast.makeText(this, "Modo ahorro de datos activado", Toast.LENGTH_SHORT).show()
             } else {
-                // Restaurar visual
-                barcodeImage.visibility = View.VISIBLE
-
                 course1.setCardBackgroundColor(resources.getColor(R.color.pastel_pink))
                 course2.setCardBackgroundColor(resources.getColor(R.color.pastel_green))
                 course3.setCardBackgroundColor(resources.getColor(R.color.pastel_blue))
@@ -107,7 +121,7 @@ class MainActivity : AppCompatActivity() {
                 course5.setCardBackgroundColor(resources.getColor(R.color.pastel_purple))
                 course6.setCardBackgroundColor(resources.getColor(R.color.pastel_red))
 
-                btnDataSaver.text = "Activar ahorro de datos"
+
                 Toast.makeText(this, "Modo ahorro de datos desactivado", Toast.LENGTH_SHORT).show()
             }
         }

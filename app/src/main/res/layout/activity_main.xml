@@ -10,27 +10,78 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <!-- Título superior -->
-    <TextView
-        android:id="@+id/app_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="UTP+ Lite"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:textColor="#D50000"
-        android:layout_gravity="left"
-        android:paddingBottom="16dp"/>
-
-    <!-- Código de estudiante -->
+    <!-- Barra superior tipo navbar -->
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/app_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="UTP+ Lite"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#D50000"
+            android:layout_weight="1"/>
+
+
+
+
+
+        <ImageButton
+            android:id="@+id/data_saver_button"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/rounded_button_background"
+            android:src="@drawable/ic_qr_code"
+            android:contentDescription="Show Barcode"
+            app:tint="@android:color/white" />
+
+
+        <ImageButton
+            android:id="@+id/show_barcode_button"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/rounded_button_background"
+            android:src="@drawable/ic_qr_code"
+            android:contentDescription="Show Barcode"
+            app:tint="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/notification"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_button_background"
+            android:src="@drawable/ic_notification"
+            android:contentDescription="Notifications"
+            app:tint="@android:color/white" />
+
+
+
+    </LinearLayout>
+
+
+    <!-- Código de estudiante (inicialmente oculto) -->
+    <LinearLayout
+        android:id="@+id/barcode_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="#F5F5F5"
         android:padding="16dp"
         android:layout_marginBottom="20dp"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,7 +98,6 @@
             android:layout_height="60dp"
             android:layout_gravity="center" />
 
-
         <TextView
             android:id="@+id/student_name"
             android:layout_width="wrap_content"
@@ -57,6 +107,68 @@
             android:layout_gravity="center_horizontal"
             android:paddingTop="8dp"/>
     </LinearLayout>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/announcement_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:backgroundTint="#FFF8E1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_dialog_info"
+                app:tint="#FFA000"
+                android:layout_marginEnd="12dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/announcement_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Anuncio importante"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/announcement_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Las clases se suspenden este viernes por mantenimiento en la plataforma."
+                    android:textColor="#444444"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/announcement_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha: 07 de junio de 2025"
+                    android:textColor="#666666"
+                    android:textSize="12sp"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
 
     <!-- Menú de Cursos -->
     <ScrollView
@@ -294,76 +406,11 @@
 
     </ScrollView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/announcement_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
-        android:backgroundTint="#FFF8E1">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@android:drawable/ic_dialog_info"
-                android:tint="#FFA000"
-                android:layout_marginEnd="12dp"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/announcement_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Anuncio importante"
-                    android:textStyle="bold"
-                    android:textColor="#000000"
-                    android:textSize="16sp"/>
-
-                <TextView
-                    android:id="@+id/announcement_message"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Las clases se suspenden este viernes por mantenimiento en la plataforma."
-                    android:textColor="#444444"
-                    android:textSize="14sp"/>
-
-                <TextView
-                    android:id="@+id/announcement_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fecha: 07 de junio de 2025"
-                    android:textColor="#666666"
-                    android:textSize="12sp"
-                    android:layout_marginTop="4dp"/>
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
 
-    <Button
-        android:id="@+id/data_saver_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Activar Ahorro de Datos"
-        android:textAllCaps="false"
-        android:backgroundTint="#D50000"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="8dp"
-        android:drawableLeft="@android:drawable/ic_menu_save"
-        android:padding="12dp"/>
+
+
+
 
 
     <!-- Barra inferior -->
@@ -383,7 +430,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/outline_add_home_24"
+            android:src="@drawable/ic_home"
             android:padding="16dp"
             android:tint="#FFFFFF"/>
 
@@ -410,7 +457,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/outline_add_24"
+            android:src="@drawable/ic_more"
             android:padding="16dp"
             android:tint="#FFFFFF"/>
 
