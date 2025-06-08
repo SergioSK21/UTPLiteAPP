@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UTPLiteApp</string>
+    <string name="title_activity_schedule">ScheduleActivity</string>
+    <string name="title_activity_courses">CoursesActivity</string>
+    <string name="title_activity_calendar">CalendarActivity</string>
+    <string name="title_activity_meetings">MeetingsActivity</string>
+    <string name="title_activity_downloads">DownloadsActivity</string>
+    <string name="title_activity_course_detail">CourseDetailActivity</string>
+</resources>
