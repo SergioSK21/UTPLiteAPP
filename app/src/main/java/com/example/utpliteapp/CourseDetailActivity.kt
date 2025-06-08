@@ -47,29 +47,83 @@ class CourseDetailActivity : AppCompatActivity() {
         )
 
         for (section in sections) {
-            val weekTitle = TextView(this).apply {
-                text = section.week
-                textSize = 18f
-                setPadding(0, 16, 0, 8)
-                setTextColor(resources.getColor(android.R.color.black))
+
+            // Contenedor por semana (LinearLayout vertical)
+            val weekContainer = LinearLayout(this).apply {
+                orientation = LinearLayout.VERTICAL
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                ).apply {
+                    setMargins(0, 16, 0, 16)
+                }
+                setBackgroundResource(R.drawable.section_card_background) // tarjeta de semana
+                setPadding(16, 16, 16, 16)
             }
 
-            container.addView(weekTitle)
+            // Contenedor de sesiones
+            val sessionsContainer = LinearLayout(this).apply {
+                orientation = LinearLayout.VERTICAL
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+                setPadding(8, 8, 8, 8)
+                visibility = LinearLayout.GONE
+            }
 
+            // Header de la semana
+            val weekTitle = TextView(this).apply {
+                text = "📚  ${section.week}"  // Agregamos emoji para más visual
+                textSize = 20f
+                setPadding(8, 8, 8, 8)
+                setTextColor(resources.getColor(android.R.color.white))
+                setBackgroundResource(R.drawable.rounded_background_red)
+            }
+
+            // Listener toggle (expand/collapse)
+            weekTitle.setOnClickListener {
+                if (sessionsContainer.visibility == LinearLayout.GONE) {
+                    sessionsContainer.visibility = LinearLayout.VISIBLE
+                } else {
+                    sessionsContainer.visibility = LinearLayout.GONE
+                }
+            }
+
+            // Agregamos sesiones
             for (session in section.sessions) {
                 val sessionText = TextView(this).apply {
-                    text = session.title
+                    text = "📄  ${session.title}"
                     textSize = 16f
-                    setPadding(32, 8, 0, 8)
-                    setBackgroundResource(R.drawable.rounded_background)
+                    setPadding(24, 16, 24, 16)
+                    setBackgroundResource(R.drawable.session_item_background)
+                    setTextColor(resources.getColor(android.R.color.black))
                     setOnClickListener {
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(session.pdfUrl))
                         startActivity(intent)
                     }
                 }
-                container.addView(sessionText)
+
+                // Margen entre sesiones
+                val sessionParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                ).apply {
+                    topMargin = 8
+                }
+
+                sessionText.layoutParams = sessionParams
+                sessionsContainer.addView(sessionText)
             }
+
+            // Armamos la estructura
+            weekContainer.addView(weekTitle)
+            weekContainer.addView(sessionsContainer)
+            container.addView(weekContainer)
         }
+
+
+
 
 
     }

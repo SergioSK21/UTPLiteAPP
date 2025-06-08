@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
             if (codigo.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
             } else {
-                if (codigo.equals("1") && password.equals("1")) {
+                if (codigo.equals("q") && password.equals("q")) {
                     startActivity(new Intent(this, MainActivity.class));
                     finish();
                 } else {
