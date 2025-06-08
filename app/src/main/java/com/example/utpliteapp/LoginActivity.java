@@ -17,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login); // Este debe coincidir con tu archivo XML
+        setContentView(R.layout.activity_login);
 
         etCodigo = findViewById(R.id.etCodigo);
         etPassword = findViewById(R.id.etPassword);
@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
             if (codigo.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
             } else {
-                if (codigo.equals("U1533148") && password.equals("123456")) {
+                if (codigo.equals("1") && password.equals("1")) {
                     startActivity(new Intent(this, MainActivity.class));
                     finish();
                 } else {
