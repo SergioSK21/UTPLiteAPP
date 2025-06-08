@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         val course6 = findViewById<CardView>(R.id.course_6)
 
         course1.setOnClickListener {
-            goToCourseDetail("Programación I", "Juan Pérez")
+            goToCourseDetail("JavaScript Avanzado", "Juan Pérez")
         }
         course2.setOnClickListener {
             goToCourseDetail("Matemáticas Discretas", "Ana Gómez")

@@ -40,17 +40,24 @@ class DownloadsFragment : Fragment() {
 
         val archivos = when (nombrePaquete) {
             "Paquete 1" -> listOf(
-                Triple("Semana1", "Semana1.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
-                Triple("Semana2", "Semana2.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
-                Triple("Semana3", "Semana3.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
-                Triple("Guia", "GuiaEstudio.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf")
+                Triple("Semana1", "S01.s1 – Conceptos, Tipos de Datos.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana1", "S01.s2 – Conceptos, Tipos de Datos.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana2", "S02.s1 – Operadores en JavaScript.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana2", "S02.s2 – Operadores en JavaScript.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana3", "S03.s1 – Manejo de Cadenas.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana3", "S03.s2 – Manejo de Cadenas.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana4", "S04.s1 – Objetos y Arreglos.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana4", "S04.s2 – Objetos y Arreglos.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
             )
             "Paquete 2" -> listOf(
-                Triple("Semana1", "Semana1.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
-                Triple("Semana2", "Semana2.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
-                Triple("Semana3", "Semana3.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
-                Triple("Semana4", "Semana4.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
-                Triple("Guia", "GuiaEstudio.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf")
+                Triple("Semana5", "S05.s1 – Creacion de algoritmos y programas con JS.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana5", "S05.s2 – Creacion de algoritmos y programas con JS.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana6", "S06.s1 – NodeJs.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana6", "S06.s2 – NodeJs.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana7", "S07.s1 – Angular.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana7", "S07.s2 – Angular.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana8", "S08.s1 – Elementos de Angular.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"),
+                Triple("Semana8", "S08.s2 – Elementos de Angular.pdf", "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf")
             )
             else -> emptyList()
         }
