@@ -30,9 +30,6 @@
             android:layout_weight="1"/>
 
 
-
-
-
         <ImageButton
             android:id="@+id/data_saver_button"
             android:layout_width="56dp"
@@ -40,7 +37,7 @@
             android:padding="12dp"
             android:layout_marginEnd="12dp"
             android:background="@drawable/rounded_button_background"
-            android:src="@drawable/ic_qr_code"
+            android:src="@drawable/ic_data_saver"
             android:contentDescription="Show Barcode"
             app:tint="@android:color/white" />
 
