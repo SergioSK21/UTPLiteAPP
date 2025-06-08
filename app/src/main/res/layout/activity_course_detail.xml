@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@android:color/white"
+    android:background="#FAFAFA"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Contenido scrollable en la parte superior -->
+    <!-- Contenido scrollable -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -17,68 +18,166 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <!-- Título del curso -->
             <TextView
                 android:id="@+id/course_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Curso"
+                android:text="Nombre del Curso"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 android:textColor="#D50000"
-                android:paddingBottom="16dp" />
+                android:paddingBottom="8dp" />
 
+            <!-- Nombre del profesor -->
             <TextView
                 android:id="@+id/professor_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Profesor"
-                android:textSize="18sp" />
+                android:text="Profesor Nombre"
+                android:textSize="18sp"
+                android:textColor="#555555"
+                android:paddingBottom="16dp" />
 
+            <!-- Secciones -->
             <LinearLayout
                 android:id="@+id/sections_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="8dp">
+
+                <!-- Ejemplo de sección (expandible) -->
+                <LinearLayout
+                    android:id="@+id/section_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/section_card_background"
+                    android:elevation="4dp"
+                    android:padding="16dp"
+                    android:layout_marginBottom="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/section_1_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sección 1: Introducción"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333"
+                        android:paddingBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/section_1_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Descripción breve de la sección o tema tratado."
+                        android:textSize="14sp"
+                        android:textColor="#666666"
+                        android:visibility="gone"
+                        android:paddingTop="8dp" />
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
 
-    <!-- Botonera inferior fija -->
+    <!-- Bottom navigation mejorado -->
     <LinearLayout
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="#D50000"
-        android:padding="12dp"
+        android:padding="8dp"
         android:gravity="center">
 
-        <Button
-            android:id="@+id/btn_home"
+        <!-- Inicio -->
+        <LinearLayout
+            android:id="@+id/nav_home"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Inicio"
-            android:textColor="#FFFFFF"
-            android:background="@android:color/transparent" />
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
 
-        <Button
-            android:id="@+id/btn_zoom"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Zoom"
-            android:textColor="#FFFFFF"
-            android:background="@android:color/transparent" />
+            <ImageView
+                android:id="@+id/icon_home"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home"
+                app:tint="#FFFFFF" />
 
-        <Button
-            android:id="@+id/btn_schedule"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Zoom -->
+        <LinearLayout
+            android:id="@+id/nav_zoom"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Horario"
-            android:textColor="#FFFFFF"
-            android:background="@android:color/transparent" />
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/icon_zoom"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_zoom"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zoom"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Horario -->
+        <LinearLayout
+            android:id="@+id/nav_schedule"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/icon_schedule"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_schedule"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horario"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </LinearLayout>

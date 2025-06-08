@@ -71,23 +71,7 @@ class CourseDetailActivity : AppCompatActivity() {
             }
         }
 
-        // Funcionalidad de los botones inferiores
-        val homeButton = findViewById<Button>(R.id.btn_home)
-        val zoomButton = findViewById<Button>(R.id.btn_zoom)
-        val scheduleButton = findViewById<Button>(R.id.btn_schedule)
 
-        homeButton.setOnClickListener {
-            finish()
-        }
-
-        zoomButton.setOnClickListener {
-            val zoomIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://zoom.us"))
-            startActivity(zoomIntent)
-        }
-
-        scheduleButton.setOnClickListener {
-            finish()
-        }
     }
 }
 

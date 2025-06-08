@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
     android:padding="24dp"
@@ -6,13 +7,64 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-    <ImageView
-        android:id="@+id/logoImageView"
-        android:layout_width="171dp"
-        android:layout_height="156dp"
-        android:layout_marginBottom="32dp"
-        android:contentDescription="Logo UTP +Lite"
-        android:src="@drawable/ic_launcher" />
+    <!-- HEADER UTP+ LITE (NUEVO) -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#DC3545"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Logo UTP -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UTP+ Lite"
+                android:textColor="#D50000"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.02"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:text="La nueva experiencia digital de aprendizaje"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#6B7674"
+        android:layout_marginBottom="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="4dp"
+        android:letterSpacing="0.02" />
+
+    <TextView
+        android:text="Cercana, dinámica y eficaz"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        android:textColor="#555555"
+        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="2dp"
+        android:letterSpacing="0.01" />
+
 
     <TextView
         android:text="Ingresa tus datos para iniciar sesión."
@@ -62,6 +114,6 @@
         android:text="Iniciar sesión"
         android:backgroundTint="#0055FF"
         android:textColor="#FFFFFF"
-        android:padding="12dp" />
+        android:padding="12dp"/>
 
 </LinearLayout>

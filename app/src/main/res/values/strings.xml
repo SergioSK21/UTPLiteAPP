@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UTPLiteApp</string>
+    <string name="app_name">UTP+ Lite</string>
     <string name="title_activity_schedule">ScheduleActivity</string>
     <string name="title_activity_courses">CoursesActivity</string>
     <string name="title_activity_calendar">CalendarActivity</string>

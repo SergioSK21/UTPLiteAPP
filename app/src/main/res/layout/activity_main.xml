@@ -435,7 +435,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/outline_call_missed_24"
+            android:src="@drawable/ic_schedule"
             android:padding="16dp"
             android:tint="#FFFFFF"/>
 
@@ -444,7 +444,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/outline_bus_alert_24"
+            android:src="@drawable/ic_zoom"
             android:padding="16dp"
             android:tint="#FFFFFF"/>
 
