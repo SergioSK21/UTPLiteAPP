@@ -13,5 +13,7 @@
         <color name="pastel_yellow">#FFF8E1</color>
         <color name="pastel_purple">#F3E5F5</color>
         <color name="pastel_red">#FFCDD2</color>
+        <color name="virtual_background">#E0F7FA</color>
+        <color name="presencial_background">#FFF3E0</color>
 
 </resources>
